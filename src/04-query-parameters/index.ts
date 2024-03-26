@@ -4,6 +4,11 @@ const app = express()
 
 const PORT = process.env.PORT || 3000
 
+//! (app.listen) initiates the server to listen for incoming requests on a specified (PORT). This effectively starts the (express) server
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
+)
+
 interface Product {
   id: string
   name: string
@@ -91,8 +96,3 @@ app.get('/v1/products/:id', (req, res) => {
 
   return res.send(existedUser)
 })
-
-//! (app.listen) initiates the server to listen for incoming requests on a specified (PORT). This effectively starts the (express) server
-app.listen(PORT, () =>
-  console.log(`Server running on http://localhost:${PORT}`)
-)

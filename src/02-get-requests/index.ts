@@ -4,6 +4,11 @@ const app = express()
 
 const PORT = process.env.PORT || 3000
 
+//! (app.listen) Allows you to listen to a (PORT) for incoming requests, this actually start up the (express) server
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
+)
+
 //! (req, request) Accesses data from the request body, cookies, headers, params, or query
 //! (res || response) Sends data, text, HTML, or JSON back to the user
 app.get('/', (req, res) => {
@@ -37,8 +42,3 @@ app.get('/v1/users', (req, res) => {
     }
   ])
 })
-
-//! (app.listen) Allows you to listen to a (PORT) for incoming requests, this actually start up the (express) server
-app.listen(PORT, () =>
-  console.log(`Server running on http://localhost:${PORT}`)
-)
