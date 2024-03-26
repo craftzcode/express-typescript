@@ -37,15 +37,15 @@ app.get('/v1/users', (req, res) => {
   res.send(mockUsers)
 })
 
-//! (:id) Route Parameter
+//! (:id) Route Parameter: Represents the unique identifier of a user
 app.get('/v1/users/:id', (req, res) => {
-  //! (parseInt) Converting the (string id) to (numeric id)
+  //! (parseInt) Converts the string (id) to a numeric value
   const parsedId = parseInt(req.params.id)
 
-  //! (isNaN) Check if the (id) is not a number
+  //! (isNaN) Checks if the (id) is not a valid number
   if (isNaN(parsedId)) return res.sendStatus(400)
 
-  //! check if the (Route Parameter) (:id) is existing on (mockUsers) data
+  //! Check if the user with the specified (id) exists in the (mockUsers) data
   const existedUser = mockUsers.find(user => user.id === parsedId)
 
   if (!existedUser) return res.sendStatus(404)
@@ -53,7 +53,7 @@ app.get('/v1/users/:id', (req, res) => {
   return res.send(existedUser)
 })
 
-//! (app.listen) Allows you to listen to a (PORT) for incoming requests, this actually start up the (express) server
+//! (app.listen) initiates the server to listen for incoming requests on a specified (PORT). This effectively starts the (express) server
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 )

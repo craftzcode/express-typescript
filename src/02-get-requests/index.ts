@@ -4,8 +4,8 @@ const app = express()
 
 const PORT = process.env.PORT || 3000
 
-//! (req, request) To get a data from (body), to access (cookies), to access (headers), to access (params), or to access (query)
-//! (res || response) To send back data, text, html, or json to the user
+//! (req, request) Accesses data from the request body, cookies, headers, params, or query
+//! (res || response) Sends data, text, HTML, or JSON back to the user
 app.get('/', (req, res) => {
   // Text
   // res.send('Hello, World')
