@@ -1,5 +1,5 @@
 {
   "watch": ["src"],
   "ext": ".ts,.js",
-  "exec": "ts-node ./src/11-routers/index.ts"
+  "exec": "ts-node ./src/12-cookies/index.ts"
 }
